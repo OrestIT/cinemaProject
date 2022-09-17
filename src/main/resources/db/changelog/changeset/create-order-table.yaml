@@ -1,0 +1,49 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-order-table
+      author: Orest
+      changes:
+        - createTable:
+            tableName: orders
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: completed
+                  type: bool
+              - column:
+                  name: price
+                  type: numeric
+                  constraints:
+                    nullable: false
+              - column:
+                  name: owner_first_name
+                  type: varchar(200)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: owner_last_name
+                  type: varchar(200)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: created_date
+                  type: timestamp
+                  constraints:
+                    nullable: false
+              - column:
+                  name: expired_date
+                  type: timestamp
+                  constraints:
+                    nullable: false
+              - column:
+                  name: movie_id
+                  type: bigint
+                  constraints:
+                    foreignKeyName: movie_id
+                    references: movies(id)
