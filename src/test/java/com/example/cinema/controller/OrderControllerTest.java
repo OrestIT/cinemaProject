@@ -62,7 +62,7 @@ public class OrderControllerTest {
     @SneakyThrows
     void shouldGetOrderById() {
         mockMvc.perform(get(this.apiLink + "/1")
-                        .contentType(MediaType.APPLICATION_JSON)).andExpect(status().isOk());
+                .contentType(MediaType.APPLICATION_JSON)).andExpect(status().isOk());
 
         verify(orderService).getById(1L);
     }
@@ -91,7 +91,7 @@ public class OrderControllerTest {
     @Test
     @SneakyThrows
     void shouldDeleteById() {
-        mockMvc.perform(delete(this.apiLink + "/1" )).andExpect(status().isOk());
+        mockMvc.perform(delete(this.apiLink + "/1")).andExpect(status().isOk());
 
         verify(orderService).delete(1L);
     }
