@@ -2,8 +2,8 @@ pipeline {
     agent any
 
     tools {
-        maven 'Maven 3.8.8' // або назва, яку ти вказав у Global Tool Configuration
-        jdk 'JDK 17'        // якщо використовуєш tool installation
+        maven 'Maven 3.8.8'
+        jdk 'JDK 17'
     }
 
     environment {
